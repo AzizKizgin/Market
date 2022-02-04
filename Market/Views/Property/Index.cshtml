@@ -1,0 +1,21 @@
+﻿@using Market.Models
+@model List<TBLPROPERTY>
+@{
+    ViewBag.Title = "Properties";
+}
+
+@foreach (var item in Model)
+{
+
+    <div style="float:left;width:150px;height:150px; margin:15px">
+        <div class="card" style="width: 18rem; margin-right: 10px">
+            <img src="@item.PHOTO" width="180" height="120" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">@item.NAME</h5>
+                <p class="card-text">@item.DETAIL</p>
+                <a href="#" class="btn btn-primary">Satın Al</a>
+                <a href="/Property/GetProperty/@item.ID" class="btn btn-info" style="margin-top:10px">Ürünü Düzenle</a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,29 @@
+﻿@model Market.Models.TBLPROPERTY
+@{
+    ViewBag.Title = "AddProp";
+}
+
+<h2>AddProp</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Ürün Adı</label>
+        @Html.TextBoxFor(p => p.NAME, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kategory </label>
+        @Html.DropDownListFor(k => k.TBLCategory.ID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Fotoğrafı</label>
+        @Html.TextBoxFor(p => p.PHOTO, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün Detayı</label>
+        @Html.TextBoxFor(p => p.DETAIL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+</form>

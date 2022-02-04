@@ -1,0 +1,27 @@
+﻿@model Market.Models.TBLPROPERTY
+@{
+    ViewBag.Title = "GetProperty";
+}
+
+<h2>GetProperty</h2>
+
+@using (Html.BeginForm("Update", "Property", FormMethod.Post))
+{
+    <div style="margin-top:15px"></div>
+    <div class="form-group">
+        <div>
+            <label>Ürün Id</label>
+            @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Ürün Adı</label>
+            @Html.TextBoxFor(k=>k.NAME, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Kategori</label>
+            @Html.DropDownListFor(k => k.TBLCategory.ID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+
+}
